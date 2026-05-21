@@ -137,7 +137,3 @@ python main.py
 ```
 
 ---
-
-## 👨‍💻 Autor(es)
-
-Projeto acadêmico desenvolvido para a disciplina Computação Gráfica
