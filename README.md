@@ -140,10 +140,4 @@ python main.py
 
 ## 👨‍💻 Autor(es)
 
-Projeto acadêmico desenvolvido para a disciplina de Computação Gráfica.
-
-- Nome: Liane F. Heidemann 
-- Turma: CC7NA
-- Professor(a): Suzana Lustosa de Sousa
-
-
+Projeto acadêmico desenvolvido para a disciplina Computação Gráfica
