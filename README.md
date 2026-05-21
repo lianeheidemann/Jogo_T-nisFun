@@ -143,7 +143,7 @@ python main.py
 Projeto acadêmico desenvolvido para a disciplina de Computação Gráfica.
 
 - Nome: Liane F. Heidemann 
-- Turma:CC7NA
+- Turma: CC7NA
 - Professor(a): Suzana Lustosa de Sousa
 
 
