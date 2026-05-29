@@ -1,0 +1,13 @@
+# Cores principais
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+DARK_BLUE = (18, 30, 54)
+LIGHT_BLUE = (52, 152, 219)
+
+COURT_GREEN = (45, 120, 70)
+
+LINE_COLOR = (220, 220, 220)
+
+PLAYER_COLOR = (240, 210, 160)
+RACKET_COLOR = (200, 50, 50)
