@@ -1,6 +1,7 @@
-<div align="left">
 
-# 🎾 TÊNISFUN
+# TÊNISFUN
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="28"/> <img src="https://img.shields.io/badge/Pygame-000000?style=for-the-badge&logo=pygame&logoColor=white" height="28"/>
+
 
 ### Jogo 2D em Python com Pygame
 
