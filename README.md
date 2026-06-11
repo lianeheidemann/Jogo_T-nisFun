@@ -1,19 +1,18 @@
-
-# TÊNISFUN
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="28"/> <img src="https://img.shields.io/badge/Pygame-000000?style=for-the-badge&logo=pygame&logoColor=white" height="28"/>
-
+# TênisFun
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pygame](https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge)
 
 ### Jogo 2D em Python com Pygame
 
 <p>
-  <img src="https://github.com/user-attachments/assets/dd2a47f7-1201-4587-9e5c-4b2cf3e454d2" width="750">
+  <img src="https://github.com/user-attachments/assets/dd2a47f7-1201-4587-9e5c-4b2cf3e454d2"  width="50%">
 </p>
 
 </div>
 
 ---
 
-## 🎮 Gameplay
+## Gameplay
 
 - A bola é lançada pelo adversário
 - O jogador deve se mover para esquerda ou direita
@@ -22,7 +21,7 @@
 
 ---
 
-## 🕹️ Controles
+## Controles
 
 | Tecla | Ação |
 |------|------|
@@ -31,7 +30,7 @@
 
 ---
 
-## 🧱 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 tenis_fun/
@@ -55,7 +54,7 @@ tenis_fun/
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Python 3.11
 - Pygame 2.6
