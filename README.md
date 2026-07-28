@@ -64,14 +64,24 @@ tenis_fun/
 
 ## 🚀 Como Executar
 
-### 1. Instalar dependência
+### Opção 1: Baixar o executável (Windows)
+
+Não precisa instalar Python nem Pygame:
+
+**[⬇️ Baixar TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/latest)**
+
+### Opção 2: Rodar via Python
+
 ```bash
-pip install pygame
+pip install -r requirements.txt
+python -m tenis_fun.main
 ```
 
-### 2. Rodar o jogo
+Ou instalando o projeto como pacote:
+
 ```bash
-python main.py
+pip install -e .
+tenis-fun
 ```
 
 ---
