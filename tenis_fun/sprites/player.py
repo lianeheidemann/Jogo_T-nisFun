@@ -1,7 +1,7 @@
 import pygame
 
-from core.colors import *
-from core.settings import *
+from tenis_fun.core.colors import *
+from tenis_fun.core.settings import *
 
 
 class Player:

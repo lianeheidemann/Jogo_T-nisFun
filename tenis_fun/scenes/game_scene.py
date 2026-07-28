@@ -1,11 +1,11 @@
 import pygame
 
-from graphics.court import Court
-from sprites.player import Player
-from sprites.ball import Ball
+from tenis_fun.graphics.court import Court
+from tenis_fun.sprites.player import Player
+from tenis_fun.sprites.ball import Ball
 
-from core.settings import *
-from core.colors import *
+from tenis_fun.core.settings import *
+from tenis_fun.core.colors import *
 
 
 class GameScene:

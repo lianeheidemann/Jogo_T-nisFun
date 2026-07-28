@@ -1,0 +1,18 @@
+[project]
+name = "tenis-fun"
+version = "0.1.0"
+description = "Jogo 2D em Python com Pygame"
+requires-python = ">=3.11"
+dependencies = [
+    "pygame==2.6.1",
+]
+
+[project.scripts]
+tenis-fun = "tenis_fun.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["tenis_fun*"]

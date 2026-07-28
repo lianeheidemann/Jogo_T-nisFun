@@ -1,0 +1,25 @@
+# Bytecode e cache do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+
+# Empacotamento
+*.egg-info/
+dist/
+build/
+
+# Artefatos do PyInstaller (o .exe deve ser publicado como Release, não commitado)
+*.exe
+
+# Configurações de IDE
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

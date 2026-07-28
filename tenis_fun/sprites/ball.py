@@ -2,7 +2,7 @@ import pygame
 import math
 import random
 
-from core.colors import *
+from tenis_fun.core.colors import *
 
 
 class Ball:

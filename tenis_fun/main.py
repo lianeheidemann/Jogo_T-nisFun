@@ -1,46 +1,51 @@
 import pygame
 
-from core.settings import *
-from scenes.game_scene import GameScene
+from tenis_fun.core.settings import *
+from tenis_fun.scenes.game_scene import GameScene
 
 
-# Inicializa o pygame
-pygame.init()
+def main():
+    # Inicializa o pygame
+    pygame.init()
 
-# Cria a janela do jogo
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    # Cria a janela do jogo
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-# Define o nome da janela
-pygame.display.set_caption("TênisFun")
+    # Define o nome da janela
+    pygame.display.set_caption("TênisFun")
 
-# Controla o FPS
-clock = pygame.time.Clock()
+    # Controla o FPS
+    clock = pygame.time.Clock()
 
-# Cena principal do jogo
-game_scene = GameScene()
+    # Cena principal do jogo
+    game_scene = GameScene()
 
-# Loop principal
-running = True
+    # Loop principal
+    running = True
 
-while running:
-    # Eventos do sistema
-    for event in pygame.event.get():
+    while running:
+        # Eventos do sistema
+        for event in pygame.event.get():
 
-        # Fecha o jogo
-        if event.type == pygame.QUIT:
-            running = False
+            # Fecha o jogo
+            if event.type == pygame.QUIT:
+                running = False
 
-    # Atualiza lógica
-    game_scene.update()
+        # Atualiza lógica
+        game_scene.update()
 
-    # Desenha elementos
-    game_scene.draw(screen)
+        # Desenha elementos
+        game_scene.draw(screen)
 
-    # Atualiza a tela
-    pygame.display.flip()
+        # Atualiza a tela
+        pygame.display.flip()
 
-    # Limita FPS
-    clock.tick(FPS)
+        # Limita FPS
+        clock.tick(FPS)
 
-# Encerra pygame
-pygame.quit()
+    # Encerra pygame
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
