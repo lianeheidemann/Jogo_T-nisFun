@@ -37,7 +37,7 @@
 
 **Opção 1 — Executável (Windows):** baixe [`TenisFun.exe`](build/TenisFun.exe) e rode direto, sem instalar nada.
 
-**Opção 2 — Via Python:**
+**Opção 2 — Via Vn:**
 ```bash
 pip install -r requirements.txt
 python main.py
