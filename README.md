@@ -6,12 +6,15 @@
 
 <p align="center">Jogo 2D de tênis feito em Python com Pygame.</p>
 
-<!-- Adicione aqui o gif de gameplay -->
 <p align="center">
-  <img src="assets/gameplay.gif" width="60%">
+  <img src="assets/gif/TenisFun_Gif.gif" width="60%">
 </p>
 
-**[⬇️ Baixar TenisFun.exe](build/TenisFun.exe)**
+---
+
+## Baixar Executavel
+
+**[⬇️ TenisFun.exe](build/TenisFun.exe)**
 
 ---
 
