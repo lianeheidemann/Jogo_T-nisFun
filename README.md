@@ -47,3 +47,7 @@ python main.py
 
 - Python 3.13
 - Pygame
+
+---
+
+<p align="center">Desenvolvido por <strong>Liane Heidemann</strong></p>
