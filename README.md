@@ -7,7 +7,7 @@
 <p align="center">Jogo 2D de tênis feito em Python com Pygame.</p>
 
 <p align="center">
-  <img src="assets/gif/TenisFun_Gif.gif" width="60%">
+  <img src="assets/gif/TenisFun_Gif.gif" width="80%">
 </p>
 
 ---
