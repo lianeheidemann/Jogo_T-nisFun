@@ -1,222 +1,61 @@
 import pygame
 
-from tenis_fun.core.settings import *
-from tenis_fun.core.colors import *
+from core.settings import *
+from core.colors import *
+from core.assets import asset_path
+
+
+BACKGROUND_PATH = asset_path("game", "background.png")
+NET_PATH = asset_path("game", "rede.png")
+
+# Remove as margens transparentes da arte antes de dimensionar.
+NET_CROP = pygame.Rect(54, 55, 2963, 426)
+NET_WIDTH = 720
+NET_TOP_Y = 350
 
 
 class Court:
     def __init__(self):
 
-        # Horizonte da quadra
-        self.horizon_y = 140
+        # ==================================================
+        # IMAGEM DE FUNDO
+        # ==================================================
 
-        # Posição da rede
-        self.net_y = 355
+        self.background = pygame.transform.scale(
+            pygame.image.load(BACKGROUND_PATH).convert(),
+            (WIDTH, HEIGHT)
+        )
+
+        # ==================================================
+        # IMAGEM DA REDE
+        # ==================================================
+
+        net_image = pygame.image.load(NET_PATH).convert_alpha()
+        net_image = net_image.subsurface(NET_CROP).copy()
+
+        net_height = int(
+            NET_WIDTH * net_image.get_height() / net_image.get_width()
+        )
+
+        self.net = pygame.transform.smoothscale(
+            net_image,
+            (NET_WIDTH, net_height)
+        )
+
+        self.net_rect = self.net.get_rect(
+            midtop=(WIDTH // 2, NET_TOP_Y)
+        )
 
     def draw(self, screen):
 
         # ==================================================
-        # CÉU / FUNDO
+        # FUNDO
         # ==================================================
 
-        screen.fill((25, 45, 80))
-
-        # ==================================================
-        # QUADRA EM PERSPECTIVA
-        # ==================================================
-
-        left_bottom = (120, HEIGHT)
-        right_bottom = (1160, HEIGHT)
-
-        left_top = (470, self.horizon_y)
-        right_top = (810, self.horizon_y)
-
-        court_points = [
-            left_bottom,
-            right_bottom,
-            right_top,
-            left_top
-        ]
-
-        pygame.draw.polygon(
-            screen,
-            (48, 150, 90),
-            court_points
-        )
-
-        # ==================================================
-        # ÁREA EXTERNA DA QUADRA
-        # ==================================================
-
-        outer_points = [
-            (40, HEIGHT),
-            (1240, HEIGHT),
-            (860, 90),
-            (420, 90)
-        ]
-
-        pygame.draw.polygon(
-            screen,
-            (35, 110, 65),
-            outer_points
-        )
-
-        # ==================================================
-        # LINHAS EXTERNAS
-        # ==================================================
-
-        pygame.draw.line(
-            screen,
-            WHITE,
-            left_bottom,
-            left_top,
-            5
-        )
-
-        pygame.draw.line(
-            screen,
-            WHITE,
-            right_bottom,
-            right_top,
-            5
-        )
-
-        pygame.draw.line(
-            screen,
-            WHITE,
-            left_bottom,
-            right_bottom,
-            5
-        )
-
-        pygame.draw.line(
-            screen,
-            WHITE,
-            left_top,
-            right_top,
-            3
-        )
-
-        # ==================================================
-        # LINHA CENTRAL
-        # ==================================================
-
-        pygame.draw.line(
-            screen,
-            WHITE,
-            (WIDTH // 2, HEIGHT),
-            (WIDTH // 2, self.horizon_y),
-            3
-        )
-
-        # ==================================================
-        # LINHAS INTERNAS
-        # ==================================================
-
-        # Laterais internas
-        pygame.draw.line(
-            screen,
-            WHITE,
-            (300, HEIGHT),
-            (545, self.horizon_y),
-            3
-        )
-
-        pygame.draw.line(
-            screen,
-            WHITE,
-            (980, HEIGHT),
-            (735, self.horizon_y),
-            3
-        )
-
-        # Linha horizontal superior
-        pygame.draw.line(
-            screen,
-            WHITE,
-            (545, self.horizon_y),
-            (735, self.horizon_y),
-            2
-        )
+        screen.blit(self.background, (0, 0))
 
         # ==================================================
         # REDE
         # ==================================================
 
-        net_left = (260, self.net_y)
-        net_right = (1020, self.net_y)
-
-        # Faixa superior da rede
-        pygame.draw.line(
-            screen,
-            WHITE,
-            net_left,
-            net_right,
-            6
-        )
-
-        # Corpo da rede
-        net_rect = pygame.Rect(
-            260,
-            self.net_y,
-            760,
-            70
-        )
-
-        pygame.draw.rect(
-            screen,
-            (180, 180, 180),
-            net_rect
-        )
-
-        # ==================================================
-        # MALHA DA REDE
-        # ==================================================
-
-        # Linhas verticais
-        for x in range(260, 1020, 14):
-
-            pygame.draw.line(
-                screen,
-                (120, 120, 120),
-                (x, self.net_y),
-                (x, self.net_y + 70),
-                1
-            )
-
-        # Linhas horizontais
-        for y in range(self.net_y, self.net_y + 70, 10):
-
-            pygame.draw.line(
-                screen,
-                (120, 120, 120),
-                (260, y),
-                (1020, y),
-                1
-            )
-
-        # ==================================================
-        # POSTES DA REDE
-        # ==================================================
-
-        pygame.draw.rect(
-            screen,
-            (230, 230, 230),
-            (248, self.net_y - 20, 10, 95)
-        )
-
-        pygame.draw.rect(
-            screen,
-            (230, 230, 230),
-            (1020, self.net_y - 20, 10, 95)
-        )
-
-        # ==================================================
-        # SOMBRA DA REDE
-        # ==================================================
-
-        pygame.draw.rect(
-            screen,
-            (30, 90, 50),
-            (260, self.net_y + 70, 760, 8)
-        )
+        screen.blit(self.net, self.net_rect)

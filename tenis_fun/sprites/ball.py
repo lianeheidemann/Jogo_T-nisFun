@@ -1,8 +1,16 @@
-import pygame
-import math
 import random
 
-from tenis_fun.core.colors import *
+import pygame
+
+from core.colors import *
+from core.assets import asset_path
+
+
+BALL_PATH = asset_path("game", "bola.png")
+
+BALL_CROP = pygame.Rect(546, 263, 450, 450)
+HIT_DISTANCE = 135
+HIT_ANTICIPATION_MS = 1000
 
 
 class Ball:
@@ -26,6 +34,23 @@ class Ball:
         self.hits = 0
         # Quantidade necessária para vencer
         self.max_hits = 10
+
+        # Recorta a bola e remove o fundo da imagem-fonte.
+        ball_image = pygame.image.load(BALL_PATH).convert_alpha()
+        self.image = ball_image.subsurface(BALL_CROP).copy()
+
+        ball_mask = pygame.Surface(self.image.get_size(), pygame.SRCALPHA)
+        pygame.draw.circle(
+            ball_mask,
+            WHITE,
+            (BALL_CROP.width // 2, BALL_CROP.height // 2),
+            BALL_CROP.width // 2
+        )
+        self.image.blit(
+            ball_mask,
+            (0, 0),
+            special_flags=pygame.BLEND_RGBA_MULT
+        )
 
         # Inicia bola
         self.reset()
@@ -85,6 +110,9 @@ class Ball:
 
         self.rotation = 0
 
+        # Controla a antecipação da animação de rebatida nesta trajetória.
+        self.hit_animation_started = False
+
     def update(self, player):
 
         # ==========================================
@@ -114,24 +142,26 @@ class Ball:
         self.rotation += 10
 
         # ==========================================
+        # ANTECIPAÇÃO DA REBATIDA
+        # ==========================================
+
+        if not self.hit_animation_started and self.speed_y > 0:
+
+            remaining_frames = max(0, (640 - self.y) / self.speed_y)
+            remaining_time_ms = remaining_frames * 16
+
+            if remaining_time_ms <= HIT_ANTICIPATION_MS:
+                player.play_hit()
+                self.hit_animation_started = True
+
+        # ==========================================
         # CHEGOU NO JOGADOR
         # ==========================================
 
         if self.y >= 640:
 
-            hit = False
-
-            # Bola esquerda
-            if self.target_side == "left":
-
-                if player.x < 640:
-                    hit = True
-
-            # Bola direita
-            else:
-
-                if player.x >= 640:
-                    hit = True
+            # Só rebate quando o jogador realmente alcança a bola.
+            hit = abs(player.x - self.x) <= HIT_DISTANCE
 
             # ==========================================
             # ACERTOU
@@ -197,66 +227,9 @@ class Ball:
         # SUPERFÍCIE
         # ==========================================
 
-        size = radius * 4
-
-        ball_surface = pygame.Surface(
-            (size, size),
-            pygame.SRCALPHA
-        )
-
-        center = size // 2
-
-        # Corpo da bola
-        pygame.draw.circle(
-            ball_surface,
-            (215, 255, 60),
-            (center, center),
-            radius
-        )
-
-        # Brilho
-        pygame.draw.circle(
-            ball_surface,
-            (240, 255, 140),
-            (
-                center - int(radius * 0.35),
-                center - int(radius * 0.35)
-            ),
-            int(radius * 0.45)
-        )
-
-        # Curvas
-        line_size = max(
-            1,
-            int(radius * 0.18)
-        )
-
-        pygame.draw.arc(
-            ball_surface,
-            WHITE,
-            (
-                center - radius,
-                center - radius,
-                radius,
-                radius * 2
-            ),
-            math.radians(-90),
-            math.radians(90),
-            line_size
-        )
-
-        pygame.draw.arc(
-            ball_surface,
-            WHITE,
-            (
-                center,
-                center - radius,
-                radius,
-                radius * 2
-            ),
-            math.radians(90),
-            math.radians(270),
-            line_size
+        ball_surface = pygame.transform.smoothscale(
+            self.image,
+            (radius * 2, radius * 2)
         )
 
         # ==========================================

@@ -1,87 +1,46 @@
-# TênisFun
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pygame](https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge)
-
-### Jogo 2D em Python com Pygame
-
-<p>
-  <img src="https://github.com/user-attachments/assets/dd2a47f7-1201-4587-9e5c-4b2cf3e454d2"  width="50%">
+<p align="center">
+  <img src="assets/menu/logo.png" width="320"><br>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge">
 </p>
 
-</div>
+<p align="center">Jogo 2D de tênis feito em Python com Pygame.</p>
+
+<!-- Adicione aqui o gif de gameplay -->
+<p align="center">
+  <img src="assets/gameplay.gif" width="60%">
+</p>
+
+**[⬇️ Baixar TenisFun.exe](build/TenisFun.exe)**
 
 ---
 
 ## Gameplay
 
-- A bola é lançada pelo adversário
-- O jogador deve se mover para esquerda ou direita
-- O objetivo é rebater corretamente por 10 rodadas
-- A dificuldade aumenta progressivamente
-
----
+- No menu, clique em **JOGAR** para iniciar a partida
+- A bola é lançada pelo adversário para o lado esquerdo ou direito da quadra
+- Posicione-se no lado correto para rebater
+- O objetivo é acertar 10 rodadas seguidas — a cada acerto, a bola fica mais rápida
+- Ao errar (ou completar as 10 rodadas), a partida termina e é possível jogar novamente ou voltar ao menu
 
 ## Controles
 
-| Tecla | Ação |
-|------|------|
-| ← | Move o jogador para esquerda |
-| → | Move o jogador para direita |
+| Tecla / Ação | Função |
+|---|---|
+| ← / → | Move o jogador |
+| Clique do mouse | Interage com os botões (Jogar, Jogar Novamente, Menu) |
 
----
+## Como executar
 
-## Estrutura do Projeto
+**Opção 1 — Executável (Windows):** baixe [`TenisFun.exe`](build/TenisFun.exe) e rode direto, sem instalar nada.
 
-```text
-tenis_fun/
-│
-├── main.py
-├── core/
-│   └── config.py
-│
-├── graphics/
-│   └── court.py
-│
-├── sprites/
-│   ├── player.py
-│   └── ball.py
-│
-├── scenes/
-│   ├── menu_scene.py
-│   └── game_scene.py
-│
-```
-
----
-
-## Tecnologias Utilizadas
-
-- Python 3.11
-- Pygame 2.6
-- PyCharm Community Edition
-
----
-
-## 🚀 Como Executar
-
-### Opção 1: Baixar o executável (Windows)
-
-Não precisa instalar Python nem Pygame:
-
-**[⬇️ Baixar TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/latest)**
-
-### Opção 2: Rodar via Python
-
+**Opção 2 — Via Python:**
 ```bash
 pip install -r requirements.txt
-python -m tenis_fun.main
+python main.py
 ```
 
-Ou instalando o projeto como pacote:
+## Tecnologias
 
-```bash
-pip install -e .
-tenis-fun
-```
-
----
+- Python 3.13
+- Pygame
