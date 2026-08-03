@@ -1,5 +1,6 @@
 import pygame
 
+from core.assets import asset_path
 from core.settings import *
 from scenes.menu_scene import MenuScene
 from scenes.game_scene import GameScene
@@ -11,8 +12,9 @@ pygame.init()
 # Cria a janela do jogo
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-# Define o nome da janela
+# Define o nome e o ícone da janela
 pygame.display.set_caption("TênisFun")
+pygame.display.set_icon(pygame.image.load(asset_path("icon", "icon.png")))
 
 # Controla o FPS
 clock = pygame.time.Clock()
