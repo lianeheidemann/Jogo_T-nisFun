@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/menu/logo_readme.png" width="320"><br>
+  <img src="assets/readme/logo_readme.png" width="320"><br>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
   <img src="https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge">
 </p>
@@ -7,7 +7,7 @@
 <p align="center">Jogo 2D de tênis feito em Python com Pygame.</p>
 
 <p align="center">
-  <img src="assets/gif/TenisFun_Gif.gif" width="80%">
+  <img src="assets/gif/TenisFun_Gif_v2.gif" width="80%">
 </p>
 
 ---
