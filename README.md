@@ -14,7 +14,7 @@
 
 ## Baixar Executavel
 
-**[⬇️ TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.0/TenisFun.exe)** 
+**[⬇️ TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.1/TenisFun.exe)** 
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## Como executar
 
-**Opção 1 — Executável (Windows):** baixe [`TenisFun.exe`](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.0/TenisFun.exe) e rode direto, sem instalar nada.
+**Opção 1 — Executável (Windows):** baixe [`TenisFun.exe`](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.1/TenisFun.exe) e rode direto, sem instalar nada.
 
 **Opção 2 — Via código-fonte:**
 ```bash
