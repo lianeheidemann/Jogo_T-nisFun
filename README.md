@@ -1,58 +1,58 @@
 <p align="center">
-  <img src="assets/readme/logo_readme.png" width="320"><br>
+  <img src="assets/readme/logo_readme.png" width="320" alt="TenisFun logo"><br>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
   <img src="https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge">
 </p>
 
-
-<p align="center">Jogo 2D de tênis feito em Python com Pygame.</p>
+<p align="center">A 2D tennis game built with Python and Pygame.</p>
 
 <p align="center">
-  <img src="assets/gif/TenisFun_Gif_v2.gif" width="80%">
+  <img src="assets/gif/TenisFun_Gif_v2.gif" width="80%" alt="TenisFun gameplay">
 </p>
 
 ---
 
-## Baixar Executavel
+## Download the Executable
 
-**[⬇️ TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.1/TenisFun.exe)** 
+**[Download TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.1/TenisFun.exe)**
 
 ---
 
 ## Gameplay
 
-- No menu, clique em **JOGAR** para iniciar a partida
-- A bola é lançada pelo adversário para o lado esquerdo ou direito da quadra
-- Posicione-se no lado correto para rebater
-- O objetivo é acertar 10 rodadas seguidas — a cada acerto, a bola fica mais rápida
-- Ao errar (ou completar as 10 rodadas), a partida termina e é possível jogar novamente ou voltar ao menu
+- Select **PLAY** from the menu to start a match.
+- The opponent sends the ball toward the left or right side of the court.
+- Move to the correct side to return the ball.
+- Complete 10 consecutive rounds; the ball becomes faster after every successful return.
+- Missing the ball or completing all 10 rounds ends the match. You can then play again or return to the menu.
 
-## Controles
+## Controls
 
-| Tecla / Ação | Função |
+| Key / Action | Function |
 |---|---|
-| ← / → | Move o jogador |
-| Clique do mouse | Interage com os botões (Jogar, Jogar Novamente, Menu) |
+| Left / Right arrow | Move the player |
+| Mouse click | Use the Play, Play Again, and Menu buttons |
 
-## Como executar
+## How to Run
 
-**Opção 1 — Executável (Windows):** baixe [`TenisFun.exe`](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.1/TenisFun.exe) e rode direto, sem instalar nada.
+**Option 1 — Windows executable:** download [TenisFun.exe](https://github.com/lianeheidemann/jogo_tenisfun/releases/download/v0.1.1/TenisFun.exe) and run it without installing dependencies.
 
-**Opção 2 — Via código-fonte:**
+**Option 2 — Source code:**
+
 ```bash
 pip install -r requirements.txt
 python main.py
 ```
 
-## Tecnologias
+## Technologies
 
 - Python 3.13
 - Pygame
 
-## Licença
+## License
 
-Este projeto está sob a licença [MIT](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">Desenvolvido por <strong>Liane Heidemann</strong></p>
+<p align="center">Developed by <strong>Liane Heidemann</strong></p>
