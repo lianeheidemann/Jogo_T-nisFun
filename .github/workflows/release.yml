@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pyinstaller
+
+      - name: Build executable
+        run: >
+          pyinstaller main.py --onefile --name TenisFun
+          --icon assets/icon/icon.ico
+          --add-data "assets;assets"
+          --add-data "tenis_fun;tenis_fun"
+
+      - name: Verify build artifact
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "dist/TenisFun.exe")) {
+            Write-Error "dist/TenisFun.exe was not produced by PyInstaller"
+            exit 1
+          }
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/TenisFun.exe
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
