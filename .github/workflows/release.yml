@@ -26,6 +26,7 @@ jobs:
           --icon assets/icon/icon.ico
           --add-data "assets;assets"
           --add-data "tenis_fun;tenis_fun"
+          --hidden-import pygame
 
       - name: Verify build artifact
         shell: pwsh
