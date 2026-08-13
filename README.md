@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/logo_readme.png" width="320" alt="TenisFun logo"><br>
+  <img src="/assets/logo-animada-v2.svg" width="320" alt="TenisFun logo"><br>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
   <img src="https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge">
 </p>
